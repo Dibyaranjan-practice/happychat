@@ -5,21 +5,26 @@ function SignUp() {
   const passwordRef = useRef(null);
 
   const loginHandler = (event) => {
-    console.log("clicked", nameRef.current.value, passwordRef.current.value);
     event.preventDefault();
-    fetch("http://localhost:4000/users/create", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        phone: nameRef.current.value,
-        password: passwordRef.current.value,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log("worked" + res))
-      .catch(() => console.log("failed"));
+    // fetch("http://localhost:4000/users/create", {
+    //   method: "post",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     phone: nameRef.current.value,
+    //     password: passwordRef.current.value,
+    //   }),
+    // })
+    //   .then((res) => res.json())
+    //   .then((res) => {
+    //     if (res === "Success") {
+    //       console.log("Success");
+    //     } else {
+    //       console.log("Failed");
+    //     }
+    //   })
+    //   .catch(() => console.log("Failed"));
   };
   return (
     <form>
